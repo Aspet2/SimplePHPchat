@@ -1,0 +1,194 @@
+:root {
+    --bgMain: #192d5e;
+    --bgOpt: hsla(197, 37%, 24%, 0.5);
+    --borderColor: #6b8deb;
+    --activeColor: #2f92f5;
+    --backColor: #2e6fb0;
+    --bgImg: url("bg.jpg");
+    --fontMain: #ffffff;
+    --fontError: #ffa047;
+    --fontUrl: #e9c46a;
+    --blur: 15px;
+}
+
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--bgMain);
+    background-image: var(--bgImg);
+    background-repeat: repeat;
+    background-size: 30%;
+}
+
+.full {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    color: var(--fontMain);
+    width: 80%;
+    padding: 20px;
+    background-color: var(--bgOpt);
+    backdrop-filter: blur(var(--blur));
+    border-radius: 15px;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+.center img {
+    border-radius: 5px;
+}
+
+.center label {
+    font-weight: bold;
+}
+
+.center input {
+    padding: 10px 5px 15px 5px;
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
+}
+
+.center input[type=submit] {
+    background-color: var(--activeColor);
+    color: var(--fontMain);
+    padding: 5px;
+}
+
+.center input[type=submit]:hover {
+    background-color: var(--backColor);
+    color: var(--fontMain);
+    cursor: pointer;
+}
+
+.button {
+    background-color: var(--activeColor);
+    color: var(--fontMain);
+    border: 0;
+}
+
+.button:hover {
+    background-color: var(--backColor);
+    color: var(--fontMain);
+    cursor: pointer;
+}
+
+.center .err {
+    font-weight: bold;
+    color: var(--fontError);
+}
+
+.area {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    width: 100%;
+    background-color: #264653;
+    color: var(--fontMain);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.top p {
+    padding-left: 5px;
+}
+
+.top a button {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 2;
+    overflow-y: scroll;
+    backdrop-filter: blur(var(--blur));
+    background-color: var(--bgOpt);
+}
+
+.container .post {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    gap: 20px;
+    align-items: baseline;
+    color: var(--fontMain);
+}
+
+.container .post h1 {
+    display: none;
+}
+
+.container .post h2 {
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.container .post p {
+    font-size: 14px;
+}
+
+.container .post a {
+    background-color: var(--fontUrl);
+    color: var(--fontMain);
+    text-decoration: none;
+}
+
+.container .post a:hover {
+    text-decoration: underline;
+}
+
+.editor {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--borderColor);
+}
+
+.editor form {
+    display: flex;
+    width: 100%;
+}
+
+.editor textarea {
+    flex-grow: 4;
+}
+
+.editor input[type=submit] {
+    flex-grow: 1;
+}
+
+.textarea {
+    border: none;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+    .center {
+      width: 30%;
+    }
+
+    .container .post h1 {
+        display: block;
+        font-size: 14px;
+        padding-left: 5px;
+    }
+
+    .container .post h2 {
+        font-weight: bold;
+        font-size: 14px;
+        padding-left: 0px;
+    }
+}
